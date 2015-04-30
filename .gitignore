@@ -1,0 +1,14 @@
+/vendor
+/node_modules
+composer.phar
+npm-debug.log
+.env.*.php
+.env.php
+.DS_Store
+.idea
+Thumbs.db
+node_modules
+vendor/*
+public/vendor/*
+workbench/*
+.env
