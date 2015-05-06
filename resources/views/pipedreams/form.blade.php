@@ -36,4 +36,4 @@
     tags: false
   });
 </script>
-@endsection
+@stop
