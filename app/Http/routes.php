@@ -1,32 +1,31 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
 Route::get('/', 'WelcomeController@index');
-
-Route::get('contact', 'PagesController@contact');
-
-Route::get('about', 'PagesController@about');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('articles', 'ArticlesController@index');
-Route::get('articles/create', 'ArticlesController@create');
-Route::get('articles/{id}', 'ArticlesController@show');
-Route::post('articles', 'ArticlesController@store');
+Route::get('about', 'PagesController@about');
+Route::get('contact', 'PagesController@contact');
 
-/* Pipe Dreams */
-
-/* List of Pipe Dreams
-Route::get('pipedreams', 'PipeDreamsController@index');
-// Form for creating Pipe Dreams
+/* Route::get('pipedreams', 'PipeDreamsController@index');
 Route::get('pipedreams/create', 'PipeDreamsController@create');
-// Show a single Pipe Dream
 Route::get('pipedreams/{id}', 'PipeDreamsController@show');
-// Store Pipe Dreams
-Route::post('pipedreams', 'PipeDreamsController@store');
-// Show a form to update a Pipe Dream
-Route::get('pipedreams/{id}/edit', 'PipeDreamsController@edit'); */
+Route::post('pipedreams', 'PipeDreamsController@store'); */
 
 Route::resource('pipedreams', 'PipeDreamsController');
+
+Route::get('tags/{tags}', 'TagsController@show');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

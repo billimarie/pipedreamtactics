@@ -12,11 +12,8 @@ class CreateTagsTable extends Migration {
 	 */
 	public function up()
 	{
-
-
 		Schema::create('tags', function(Blueprint $table)
 		{
-			// $table->engine = "InnoDB";
 			$table->increments('id');
 			$table->string('name');
 			$table->timestamps();
@@ -24,32 +21,15 @@ class CreateTagsTable extends Migration {
 
 		Schema::create('pipe_dream_tag', function(Blueprint $table)
 		{
+			$table->integer('pipe_dream_id')->unsigned()->index();
+			//$table->foreign('pipe_dream_id')->references('id')->on('pipedreams')->onDelete('cascade');
 
-			$table
-				->integer('tag_id')
-			//	->length(10)
-				->unsigned()
-				->index();
-			$table
-				->foreign('tag_id')
-				->references('id')
-				->on('tags')
-				->onDelete('cascade');
-
-			$table
-				->integer('pipe_dream_id')
-			//	->length(10)
-				->unsigned()
-				->index();
-			$table
-				->foreign('pipe_dream_id')
-				->references('id')
-				->on('pipe_dreams')
-				->onDelete('cascade');
+			$table->integer('tag_id')->unsigned()->index();
+			//$table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
 
 			$table->timestamps();
-		});
 
+		});
 	}
 
 	/**

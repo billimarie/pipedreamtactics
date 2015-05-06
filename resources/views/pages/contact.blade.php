@@ -1,19 +1,20 @@
 @extends('app')
 
 @section('content')
+  <div class="body">
+    <h1>Contact</h1>
 
-	<div class="body">
+    <hr />
 
-		<h1>Contact</h1>
+		<h3>No automated responses.</h3>
 
-		<hr />
+    <div class="clearfix"><br /></div>
 
-		<p class="lead">All you people know who I am and how to reach me so I don't see the point</p>
-			<small>(Disabled, for now. Will fix soon.)</small>
-	</div>
+		<p class="lead">Send us an email--but beware of the delayed reply. We're only human.</p>
 
-@stop
+    <div class="clearfix"><br /></div>
 
-@section('footer')
+    <p><a href="mailto:pipedreamtactics@gmail.com"><span class="text-uppercase btn btn-danger btn-lg">Email</span></a></p>
 
+  </div>
 @stop

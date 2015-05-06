@@ -11,7 +11,7 @@ class PipeDreamRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return true;
+		return true; //change to false for users
 	}
 
 	/**
@@ -22,8 +22,7 @@ class PipeDreamRequest extends Request {
 	public function rules()
 	{
 		return [
-			'title'	=> ['required', 'min:7', 'max:255'],
-			'email'	=> 'email',
+			'title' => 'required|min:7'
 		];
 	}
 

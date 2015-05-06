@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['name', 'email', 'location', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -31,7 +31,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-	/* METHOD: User can have many Pipe Dreams */
+	// A user can have many pipe dreams.
 
 	public function pipedreams()
 	{

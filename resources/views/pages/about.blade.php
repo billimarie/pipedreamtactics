@@ -1,40 +1,36 @@
 @extends('app')
 
 @section('content')
+  <div class="body">
+    <h1>About</h1>
 
-	<div class="body">
+    <hr />
 
-		<h1>About</h1>
+		<h3>Pipe Dream Tactics is an attempt to <span class="text-danger">embrace impracticality</span> and <span class="text-danger">override fear</span> through the <span class="text-danger">playful exploration</span> of pipe dreams.</h3>
 
-		<hr />
+    <div class="clearfix"><br /></div>
 
-		<h2>The Collection&nbsp;<a href="{{ url('pipedreams') }}"><span class="text-uppercase btn btn-danger btn-xs" style="margin-top: -5px">View</span></a></h2>
+		<p class="lead">Wishful Thinking meets Foolish Stumbling.</p>
 
-		<p class="lead">We've been curating a collection of user-submitted pipe dreams. <a href="{{ url('pipedreams') }}">Take a look</a>.</p>
+    <div class="clearfix"><br /></div>
 
-		<div class="clearfix"></div>
+    <p><a href="{{ url('pipedreams/create') }}"><span class="text-uppercase btn btn-danger btn-lg">Add Your Pipe Dream</span></a></p>
 
-		<h2>Add Your Pipe Dream&nbsp;<a href="{{ url('pipedreams/create') }}"><span class="text-uppercase btn btn-danger btn-xs" style="margin-top: -5px">Add</span></a></h2>
+    <div class="clearfix"><br /></div>
 
-		<p class="lead">You can <a href="{{ url('pipedreams/create') }}">add your pipe dream</a> to our growing database.</p>
+    <p><a href="{{ url('pipedreams') }}"><span class="text-uppercase btn btn-danger btn-lg">Browse the Collection</span></a></p>
 
-		<div class="clearfix"></div>
+    <div class="clearfix"><br /></div>
 
-		<h2>Share The Collection&nbsp;<a href="#"><span class="text-uppercase btn btn-danger btn-xs" style="margin-top: -5px" disabled>Share</span></a></h2>
+    <p><span class="text-uppercase btn btn-danger btn-lg" disabled>Follow the Process</span></p>
 
-		<small>(Disabled, for now. Will fix soon.)</small>
+    <div class="clearfix"><br /></div>
 
-		<p class="lead">Come up with clever bullshit and insert here.</p>
+		<p><a href="http://pipedreamtactics.wordpress.com"><span class="text-uppercase btn btn-danger btn-lg">Read the Blog</span></a></p>
 
+		<div class="clearfix"><br /></div>
 
-		<div class="clearfix"></div>
+		<p><a href="{{ url('contact') }}"><span class="text-uppercase btn btn-danger btn-lg">Introduce Yourself</span></a></p>
 
-		<h2>Send Comments&nbsp;<a href="{{ url('contact') }}"><span class="text-uppercase btn btn-danger btn-xs" style="margin-top: -5px" disabled>Suggestions</span></a></h2>
-
-		<small>(Disabled, for now. Will fix soon.)</small>
-
-		<p class="lead">Have a comment, criticism, complaint, compliment, or other curious 'c' word? Send a message and we'll get back to you.</p>
-
-	</div>
-
+  </div>
 @stop

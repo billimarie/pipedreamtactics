@@ -1,105 +1,102 @@
 <?php namespace App\Http\Controllers;
 
 use App\PipeDream;
+use App\User;
 use App\Tag;
-use Auth;
-
 use App\Http\Requests;
 use App\Http\Requests\PipeDreamRequest;
-
+use Illuminate\Http\Response;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
-
 use App\Http\Controllers\Controller;
+use Auth;
 
 class PipeDreamsController extends Controller {
 
-  // Create a new pipe dreams controller instance
+	// Create new pipe dreams instance
 
-  public function __construct()
-  {
-    $this->middleware('auth', ['only' => 'create']);
-  }
+	public function __construct()
+	{
+		$this->middleware('auth', ['only' => 'create']);
+	}
 
-  //  Show all Pipe Dreams (latest, first)
+	// Show all pipe dreams
 
-  public function index()
-  {
-    $pipedreams = PipeDream::latest('created_at')->get();
+	public function index()
+	{
+		$pipedreams = PipeDream::latest()->get();
 
-    return view('pipedreams.index', compact('pipedreams', 'user'));
-  }
+		return view('pipedreams.index', compact('pipedreams'));
+	}
 
-  /* Show a single Pipe Dream */
+	// Show single pipe dream
 
-  public function show(PipeDream $pipedream)
-  {
-    return view('pipedreams.show', compact('pipedream'));
-  }
+	public function show(Pipedream $pipedream)
+	{
+		return view('pipedreams.show', compact('pipedream'));
+	}
 
-  // Create a single new Pipe Dream
+	// Add pipe dream
 
-  public function create()
-  {
-    $tags = Tag::lists('name', 'id');
+	public function create()
+	{
+		$tags = Tag::lists('name', 'id');
 
-    return view('pipedreams.create', compact('tags'));
-  }
+		return view('pipedreams.create', compact('tags'));
+	}
 
-  /* Save a new Pipe Dream
-     - Checks Pipe Dream Form validation
-     - Stores a new Pipe Dream
-     - Creates Flash Message upon creation */
+	// Store pipe dreams
 
-  public function store(PipeDreamRequest $request)
-  {
+	public function store(PipeDreamRequest $request)
+	{
 
-    $this->createPipeDream($request);
+		PipeDreamsController::create($request->all());
 
-    flash('Your Pipe Dream was added!');
+		$this->addPipeDream($request);
 
-    return redirect('pipedreams')->with('flash_message');
+		return redirect('pipedreams')->with([
+				'flash_message' => 'Your pipe dream has been added!'
+				// , 'flash_message_important' => false
+			]);
+	}
 
-  }
+	/* Edit Pipe Dreams
 
-  // Edit Method
+	public function edit(Pipedream $pipedream)
+	{
+		$tags = Tag::lists('name', 'id');
 
-  public function edit(PipeDream $pipedream)
-  {
-    $tags = Tag::lists('name', 'id');
+		return view('pipedreams.edit', compact ('pipedream', 'tags'));
+	} */
 
-    return view('pipedreams.edit', compact('pipedream', 'tags'));
-  }
+	/* Update
 
-  // "Update" Method
+	public function update(Pipedream $pipedream, PipeDreamRequest $request)
+	{
 
-  public function update(PipeDreamRequest $request, PipeDream $pipedream)
-  {
+		$pipedream->update($request->all());
 
-    $pipedream->update($request->all());
+		$this->syncTags($pipedream, $request->input('tag_list'));
 
-    $this->syncTags($pipedream, $request->input('tag_list'));
+		return redirect('pipedreams');
 
-    return redirect('pipedreams');
-  }
+	} */
 
-  /* Sync up list of tags in database
+	// Sync list of tags inside database
 
-  private function syncTags(PipeDream $pipedream)
-  {
-    $tags=Array();
-    $pipedream->tags()->syncTags($tags);
-  } */
+	private function syncTags(Pipedream $pipedream, array $tags)
+	{
+		$pipedream->tags()->sync($tags);
+	}
 
-  // Save a new Pipe Dream (create & persist)
+	// Save new Pipe Dream
 
-  private function createPipeDream(PipeDreamRequest $request)
-  {
-    $pipedream = Auth::user()->pipedreams()->create($request->all());
+	private function addPipeDream(PipeDreamRequest $request)
+	{
+		$pipedream = Auth::user()->pipedreams()->create($request->all());
 
-//    $this->syncTags($pipedream, $request->input('tag_list'));
+		$this->syncTags($pipedream, $request->input('tag_list'));
 
-    return $pipedream;
-  }
+		return $pipedream;
+	}
 
 }

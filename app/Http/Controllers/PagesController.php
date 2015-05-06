@@ -8,21 +8,8 @@ use Illuminate\Http\Request;
 class PagesController extends Controller {
 
 	public function about()
-
 	{
-		$first = 'Billi';
-		$last = 'R';
-
-		$city = 'Los Angeles';
-		$state = 'CA';
-
-		$pipe_dream = 'Lorem epsum blah blah bloohey';
-
-		$explorers = [
-			'Billimarie Robinson', 'Terri Heiggdigger', 'Mart Cart'
-		];
-
-		return view('pages.about', compact('first', 'last', 'city', 'state', 'pipe_dream', 'explorers'));
+		return view('pages.about');
 	}
 
 	public function contact()

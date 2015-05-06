@@ -1,26 +1,66 @@
 @extends('app')
 
 @section('content')
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
 
-				<div class="panel-heading">Home</div>
+<h1 class="title">What's Your Pipe Dream?</h1>
 
-				<div class="panel-body">
-					<p class="lead">You are logged in!</p>
-					<p>This is the home.blade.php view.</p>
+<hr />
 
-					<h2>Your Pipe Dreams</h2>
-					<p class="lead">Title Here</p>
-					<hr />
-					<h3>Edit Name</h3>
-					<h3>Edit (Add?) Location</h3>
-					<h3>Edit (Add?) Description</h3>
-				</div>
+<div class="body center-block">
 
-			</div>
-		</div>
+<p class="lead"><strong>Pipe Dream Tactics</strong> is <span class="text-danger">an online repository of pipe dreams</span> (...and a resource for the people who have them)</p>
+
+<div class="clearfix"><br /></div>
+
+<div class="row text-center">
+
+	<div class="col-xs-6 col-sm-3" style="padding: 20px 0;">
+		<i class="fa fa-magic fa-5x"></i>
+		<div class="clearfix"><br /></div>
+		<a href="{{ url('pipedreams/create') }}">
+			<button class="btn btn-danger btn-lg">
+				<span class="text-uppercase">
+					<strong>Add</strong>
+				</span>
+			</button>
+		</a>
+
 	</div>
 
-@stop
+	<div class="col-xs-6 col-sm-3" style="padding: 20px 0;">
+		<i class="fa fa-eye fa-5x"></i>
+		<div class="clearfix"><br /></div>
+		<a href="{{ url('pipedreams') }}">
+			<button class="btn btn-danger btn-lg">
+				<span class="text-uppercase">
+					<strong>View</strong>
+				</span>
+			</button>
+		</a>
+	</div>
+
+	<div class="col-xs-6 col-sm-3" style="padding: 20px 0;">
+		<i class="fa fa-users fa-5x"></i>
+		<div class="clearfix"><br /></div>
+		<a href="http://pipedreamtactics.wordpress.com" target="_blank">
+			<button class="btn btn-danger btn-lg">
+				<span class="text-uppercase">
+					<strong>Blog</strong>
+				</span>
+			</button>
+		</a>
+	</div>
+
+	<div class="col-xs-6 col-sm-3" style="padding: 20px 0;">
+		<i class="fa fa-paper-plane-o fa-5x"></i>
+		<div class="clearfix"><br /></div>
+		<a href="{{ url('contact') }}">
+			<button class="btn btn-danger btn-lg">
+				<span class="text-uppercase">
+					<strong>Comments</strong>
+				</span>
+			</button>
+		</a>
+	</div>
+
+@endsection

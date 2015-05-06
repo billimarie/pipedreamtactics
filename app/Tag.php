@@ -8,9 +8,9 @@ class Tag extends Model {
 		'name'
 	];
 
-	/* Get the Pipe Dreams associated with given tag. */
+	// Gets pipe dreams associated with given tag.
 
-	public function pipe_dreams()
+	public function pipedreams()
 	{
 		return $this->belongsToMany('App\PipeDream');
 	}
