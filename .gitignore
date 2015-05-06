@@ -1,3 +1,6 @@
+.env
+.env.*.php
+.env.php
 /vendor
 /node_modules
 composer.phar
@@ -9,6 +12,3 @@ node_modules
 vendor/*
 public/vendor/*
 workbench/*
-.env
-.env.*.php
-.env.php
