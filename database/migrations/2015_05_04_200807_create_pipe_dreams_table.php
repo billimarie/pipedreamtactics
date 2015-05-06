@@ -20,7 +20,6 @@ class CreatePipeDreamsTable extends Migration {
 			$table->text('description')->nullable();
 			$table->string('name')->nullable();
 			$table->string('location')->nullable();
-			$table->string('email')->nullable();
 			$table->timestamps();
 		});
 	}
