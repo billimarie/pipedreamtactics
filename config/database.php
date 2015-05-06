@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'pgsql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -66,10 +66,10 @@ return [
 
 		'pgsql' => [
 			'driver'   => 'pgsql',
-			'host'     => env('DB_HOST', 'localhost'),
-			'database' => env('DB_DATABASE', 'forge'),
-			'username' => env('DB_USERNAME', 'forge'),
-			'password' => env('DB_PASSWORD', ''),
+			'host'     => parse_url(getenv("postgres://lbapsdoxxkujja:8zWdbZnNyscwfXlm83-2TGTlNz@ec2-23-21-96-129.compute-1.amazonaws.com:5432/d9r3ei5jtp3qob"))["host"],
+			'database' => substr(parse_url(getenv("postgres://lbapsdoxxkujja:8zWdbZnNyscwfXlm83-2TGTlNz@ec2-23-21-96-129.compute-1.amazonaws.com:5432/d9r3ei5jtp3qob"))["path"], 1),
+			'username' => parse_url(getenv("postgres://lbapsdoxxkujja:8zWdbZnNyscwfXlm83-2TGTlNz@ec2-23-21-96-129.compute-1.amazonaws.com:5432/d9r3ei5jtp3qob"))["user"],
+			'password' => parse_url(getenv("postgres://lbapsdoxxkujja:8zWdbZnNyscwfXlm83-2TGTlNz@ec2-23-21-96-129.compute-1.amazonaws.com:5432/d9r3ei5jtp3qob"))["pass"],
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
