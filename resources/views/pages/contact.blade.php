@@ -6,11 +6,11 @@
 
     <hr />
 
-		<h3>No automated responses.</h3>
+		<h3>Send us an email.</h3>
 
     <div class="clearfix"><br /></div>
 
-		<p class="lead">Send us an email--but beware of the delayed reply. We're only human.</p>
+		<p class="lead">You'll get a real, live, non-automated human response.</p>
 
     <div class="clearfix"><br /></div>
 

@@ -68,10 +68,10 @@ return [
 
 		'pgsql' => [
 			'driver'   => 'pgsql',
-			'host'     => 'ec2-23-21-96-129.compute-1.amazonaws.com',
-			'database' => 'd9r3ei5jtp3qob',
-			'username' => 'lbapsdoxxkujja',
-			'password' => '8zWdbZnNyscwfXlm83-2TGTlNz',
+			'host'     => env('DB_HOST', 'localhost'),
+			'database' => env('DB_DATABASE', 'homestead'),
+			'username' => env('DB_USERNAME', 'homestead'),
+			'password' => env('DB_PASSWORD', 'secret'),
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
