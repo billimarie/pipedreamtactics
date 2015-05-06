@@ -33,14 +33,4 @@ class WelcomeController extends Controller {
 		return view('welcome');
 	}
 
-	public function contact()
-	{
-		return view('pages.contact');
-	}
-
-	public function about()
-	{
-		return view('pages.about');
-	}
-
 }

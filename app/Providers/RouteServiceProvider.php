@@ -24,8 +24,21 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
+		//
+
 		$router->model('pipedreams', 'App\PipeDream');
-}
+
+		// Bind to Tag Model
+
+		$router->bind('tags', function($name)
+		{
+			return \App\Tag::where('name', $name)->firstOrFail();
+
+		});
+
+//		$router->model('tags', 'App\Tag');
+
+	}
 
 	/**
 	 * Define the routes for the application.

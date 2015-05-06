@@ -5,12 +5,12 @@
 
   <hr />
 
-  @include('errors.list')
+  {!! Form::model($pipedream, ['method' => 'PATCH', 'action' => ['PipeDreamsController@update', $pipedream->id]]) !!}
 
-  {!! Form::model($pipedream, ['method' => 'PATCH', 'action' => [ 'PipeDreamsController@update', $pipedream->id]]) !!}
-
-  @include('pipedreams.partials', ['submitButtonText' => 'Update Pipe Dream'])
+    @include ('pipedreams.form', ['submitButtonText' => 'Update Pipe Dream'])
 
   {!! Form::close() !!}
+
+  @include ('errors.list')
 
 @stop
