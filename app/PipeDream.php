@@ -8,8 +8,7 @@ class PipeDream extends Model {
 		'title',
 		'description',
 		'name',
-		'location',
-		'email'
+		'location'
 	];
 
 	// A Pipe Dream is created by a User.
