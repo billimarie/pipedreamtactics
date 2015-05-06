@@ -64,12 +64,14 @@ return [
 			'strict'    => false,
 		],
 
+		// port: 5432
+
 		'pgsql' => [
 			'driver'   => 'pgsql',
-			'host'     => parse_url(getenv("postgres://lbapsdoxxkujja:8zWdbZnNyscwfXlm83-2TGTlNz@ec2-23-21-96-129.compute-1.amazonaws.com:5432/d9r3ei5jtp3qob"))["host"],
-			'database' => substr(parse_url(getenv("postgres://lbapsdoxxkujja:8zWdbZnNyscwfXlm83-2TGTlNz@ec2-23-21-96-129.compute-1.amazonaws.com:5432/d9r3ei5jtp3qob"))["path"], 1),
-			'username' => parse_url(getenv("postgres://lbapsdoxxkujja:8zWdbZnNyscwfXlm83-2TGTlNz@ec2-23-21-96-129.compute-1.amazonaws.com:5432/d9r3ei5jtp3qob"))["user"],
-			'password' => parse_url(getenv("postgres://lbapsdoxxkujja:8zWdbZnNyscwfXlm83-2TGTlNz@ec2-23-21-96-129.compute-1.amazonaws.com:5432/d9r3ei5jtp3qob"))["pass"],
+			'host'     => 'ec2-23-21-96-129.compute-1.amazonaws.com',
+			'database' => 'd9r3ei5jtp3qob',
+			'username' => 'lbapsdoxxkujja',
+			'password' => '8zWdbZnNyscwfXlm83-2TGTlNz',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
