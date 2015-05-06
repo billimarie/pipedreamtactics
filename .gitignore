@@ -2,8 +2,6 @@
 /node_modules
 composer.phar
 npm-debug.log
-.env.*.php
-.env.php
 .DS_Store
 .idea
 Thumbs.db
@@ -12,3 +10,5 @@ vendor/*
 public/vendor/*
 workbench/*
 .env
+.env.*.php
+.env.php

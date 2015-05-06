@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'pgsql',
+	'default' => 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -68,10 +68,10 @@ return [
 
 		'pgsql' => [
 			'driver'   => 'pgsql',
-			'host'     => env('DB_HOST', 'localhost'),
-			'database' => env('DB_DATABASE', 'homestead'),
-			'username' => env('DB_USERNAME', 'homestead'),
-			'password' => env('DB_PASSWORD', 'secret'),
+			'host'     => env('DB_HOST'),
+			'database' => env('DB_DATABASE'),
+			'username' => env('DB_USERNAME'),
+			'password' => env('DB_PASSWORD'),
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
