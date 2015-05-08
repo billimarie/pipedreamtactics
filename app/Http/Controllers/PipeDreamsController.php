@@ -12,12 +12,12 @@ use Auth;
 
 class PipeDreamsController extends Controller {
 
-	// Create new pipe dreams instance
+	/* Create new pipe dreams instance
 
 	public function __construct()
 	{
 		$this->middleware('auth', ['only' => 'create']);
-	}
+	} */
 
 	// Show all pipe dreams
 
@@ -35,7 +35,7 @@ class PipeDreamsController extends Controller {
 		return view('pipedreams.show', compact('pipedream'));
 	}
 
-	// Add pipe dream
+	// Create a pipe dream
 
 	public function create()
 	{
@@ -92,8 +92,9 @@ class PipeDreamsController extends Controller {
 
 	private function addPipeDream(PipeDreamRequest $request)
 	{
-		$pipedream = Auth::user()->pipedreams()->create($request->all());
 
+		$pipedream = PipeDream::create($request->all());
+		// * Auth = Auth::user()->pipedreams()->create($request->all());
 		$this->syncTags($pipedream, $request->input('tag_list'));
 
 		return $pipedream;

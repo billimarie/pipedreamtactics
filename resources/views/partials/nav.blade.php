@@ -7,28 +7,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ url('home') }}">Pipe Dream Tactics</a><span class="text-muted" style="margin-left: -10px"><small>Beta</small></span>
+      <a class="navbar-brand" href="{{ url('/') }}">Pipe Dream Tactics <span class="text-muted"><sup>Beta</sup></span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('pipedreams/create') }}"><i class="fa fa-magic"></i> Add</a></li>
-        <li><a href="{{ url('pipedreams') }}">View</a></li>
-        <li><a href="{{ url('about') }}">About</a></li>
+
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        @if (Auth::guest())
-          <li><a href="{{ url('/auth/login') }}">Login</a></li>
-          <li><a href="{{ url('/auth/register') }}">Register</a></li>
-        @else
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-            </ul>
-          </li>
-        @endif
+        <li><a href="{{ url('pipedreams/create') }}"><i class="fa fa-magic"></i> Add</a></li>
+        <li><a href="{{ url('pipedreams') }}">View</a></li>
+        <li><a href="{{ url('about') }}">About</a></li>
+        <li><a href="{{ url('contact') }}">Contact</a></li>
+        <li><a href="http://pipedreamtactics.wordpress.com" target="_blank">Blog</a></li>
+        <li><a href="http://www.github.com/billimarie/pipedreamtactics" target="_blank">GitHub</a></li>
       </ul>
     </div>
   </div>

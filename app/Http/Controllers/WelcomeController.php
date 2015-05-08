@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Tag;
+use App\PipeDream;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -18,10 +21,10 @@ class WelcomeController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct()
+/*	public function __construct()
 	{
 		$this->middleware('guest');
-	}
+	} */
 
 	/**
 	 * Show the application welcome screen to the user.
@@ -30,7 +33,11 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$tags = Tag::lists('name', 'id');
+
+		$pipedreams = PipeDream::latest()->get();
+
+		return view('welcome', compact('tags', 'pipedreams'));
 	}
 
 }
