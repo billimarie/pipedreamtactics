@@ -22,7 +22,7 @@ class PipeDreamRequest extends Request {
 	public function rules()
 	{
 		return [
-			'title' => 'required|min:7'
+			'title' => 'required|min:7|max:175'
 		];
 	}
 

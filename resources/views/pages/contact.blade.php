@@ -6,11 +6,9 @@
 
     <hr />
 
-		<h3>Send us an email.</h3>
+		<h3>Full Disclaimer</h3>
 
-    <div class="clearfix"><br /></div>
-
-		<p class="lead">You'll get a real, live, non-automated human response.</p>
+		<p class="lead">Send us an email, and you'll get a real, live, non-automated human response.<br /><br />It will probably be long.<br /><br />And most likely full of intimate ramblings.</p>
 
     <div class="clearfix"><br /></div>
 
