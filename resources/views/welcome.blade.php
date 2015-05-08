@@ -13,20 +13,21 @@
 		@foreach ($pipedreams as $pipedream)
     <div class="item">
 			<h1>
-				<a class="featurePipeDreams" href="{{ url('pipedreams', $pipedream->id) }}">"{{ $pipedream->title }}"</a>
-			</h1>
+				<a href="{{ url('pipedreams', $pipedream->id) }}">"{{ $pipedream->title }}"</a>
+			<h1>
+			<p class="lead"><a href="{{ url('pipedreams', $pipedream->id) }}">{{ $pipedream->name }}</a><br />{{ $pipedream->location }}<br /></p>
 		</div>
 		@endforeach
 
 		<div class="item">
 			<h1>
-				<a class="featurePipeDreams" href="{{ url('pipedreams/create') }}">Add Your Pipe Dream</a>
+				<a href="{{ url('pipedreams/create') }}">Add Your Pipe Dream</a>
 			</h1>
 		</div>
 
 		<div class="item">
 			<h1>
-				<a class="featurePipeDreams" href="{{ url('pipedreams') }}">View All Pipe Dreams</a>
+				<a href="{{ url('pipedreams') }}">View All Pipe Dreams</a>
 			</h1>
 		</div>
 
